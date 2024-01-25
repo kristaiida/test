@@ -13,8 +13,6 @@ export default function App() {
 
   return (
     <SafeAreaView>
-
-    
     <View >
       <TodoScreen linking={linking} fallback={<Text>Loading...</Text>} />
     </View>
