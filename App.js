@@ -1,12 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import TodoScreen from './src/screen/TodoScreen';
+import * as Linking from 'expo-linking';
+
+const prefix = Linking.createURL('/');
 
 export default function App() {
+
+  const linking = {
+    prefixes: [prefix],
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <SafeAreaView>
+
+    
+    <View >
+      <TodoScreen linking={linking} fallback={<Text>Loading...</Text>} />
     </View>
+    </SafeAreaView>
   );
 }
 
